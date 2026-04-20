@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: hrms-backend
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: FRONTEND_URL
+        sync: false
+      - key: GOOGLE_SHEET_ID
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: GOOGLE_APPLICATION_CREDENTIALS
+        sync: false
